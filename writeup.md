@@ -174,7 +174,7 @@ Time for some object tracking! Quad2 has some very stable behavior and passes th
 
 ### Notes ###
 
-* A lot of parameters can be calculated using the formulae. However, sometimes better results can acheived by trial and error.
-* Getting the scenarios to pass is great, but it is better spend some time optimizing the performance and behavior of the drones.  Therefore, the goal should be for smooth flight, minimizing the oscillations on the wave-form generator and minimizing t_set.
+* A lot of parameters can be calculated using the formulae. However, sometimes better results can be achieved by trial and error.
+* Getting the scenarios to pass is great, but it is better to spend some time optimizing the performance and behavior of the drones.  Therefore, the goal should be for smooth flight, minimizing the oscillations on the waveform generator and minimizing t_set.
 * Trade-offs will always be present in this "single input, multiple device" type parallelism. Aiming for overall robust behavior between drones is better than optimizing a single done.
 * This project is actually a lot of fun!
