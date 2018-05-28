@@ -9,7 +9,7 @@ You're reading it!
 
 ## Implemented Controller ##
 
-##### Implemented body rate control in C++. #####
+### Implemented body rate control in C++. ###
 Use V3F and multiply the inertial term to get the moment.
 
 ```c
@@ -20,7 +20,7 @@ Inertia.z = Izz;
 momentCmd = Inertia * kpPQR * (pqrCmd - pqr);
 ```
 
-##### Implement roll pitch control in C++. #####
+### Implement roll pitch control in C++. ###
 
 It is import to note that the tilt angles are going to be important here, for when we want to balance the drone in the simulator (or field). The different constraints can be separated into the x and y components. Note, floats are used over doubles here. Though floating points are less precise, they can save memory and emulate "real-time" behavior easier in the simulator. This is a good practice for drones in general, since they are technically an embedded system.
 
@@ -47,7 +47,7 @@ if (collThrustCmd > 0) {
 pqrCmd.z = 0;
 
 ```
-##### Implement altitude controller in C++. #####
+### Implement altitude controller in C++. ###
 The u-bar term is needed to acquire the thrust. Convert the formula into an algorithm that can acheive this.
 ```c
 
@@ -69,7 +69,7 @@ thrust = - mass * CONSTRAIN(acc, - maxAscentRate / dt, maxAscentRate / dt);
 
 
 ```
-##### Implement lateral position control in C++. #####
+### Implement lateral position control in C++. ###
 Just expanding from the source material, we can concisely implement the lateral position control.
 
 ```c
@@ -84,14 +84,14 @@ accelCmd.z = 0;
 
 ```
 
-##### Implement yaw control in C++. #####
+### Implement yaw control in C++. ###
 This is pretty straight forward, based on everything else we have done. Don't you love when only one line is needed to complete a function?
 
 ```c
 yawRateCmd = kpYaw * (yawCmd - yaw);
 
 ```
-##### Implement calculating the motor commands given commanded thrust and moments in C++. #####
+### Implement calculating the motor commands given commanded thrust and moments in C++. ###
 This should probably have been at the top of the writeup, but this is fine. The algorithm converts the forces as a funtion of tau, w.r.t the arm length and kappa.
 
 ```c
@@ -133,7 +133,7 @@ PASS: ABS(Quad3.PosFollowErr) was less than 0.100000 for at least 1.500000 secon
 PASS: ABS(Quad2.PosFollowErr) was less than 0.250000 for at least 3.000000 seconds
 
 ```
-##### Your C++ controller is successfully able to fly the provided test trajectory and visually passes inspection of the scenarios leading up to the test trajectory. #####
+### Your C++ controller is successfully able to fly the provided test trajectory and visually passes inspection of the scenarios leading up to the test trajectory. ###
 
 
 Let's begin! This is what they gave me.
